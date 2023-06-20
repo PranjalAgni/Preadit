@@ -64,6 +64,8 @@ model Subreddit {
   subscribers Subscription[]
   userId      String?
   User        User?          @relation(fields: [userId], references: [id])
+
+  @@index([userId])
 }
 
 model Subscription {
