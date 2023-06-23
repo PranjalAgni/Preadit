@@ -43,7 +43,16 @@ const Page = () => {
         if (err.response?.status === 401) {
           return loginToast();
         }
+
+        toast({
+          title: "There was an error",
+          description: "Please try again later.",
+          variant: "destructive"
+        });
       }
+    },
+    onSuccess: (data) => {
+      router.push(`/r/${data}`);
     }
   });
 
